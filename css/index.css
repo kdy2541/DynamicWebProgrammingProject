@@ -11,3 +11,24 @@ div{
 ul.util_menu_ul ,li{
   display: inline-block;
 }
+
+
+#wrap{
+  position: relative;
+  width: 100%;
+  float:left;
+  background-color: #C4F4FE;
+  border-radius: 20px 20px 0px 0px;
+}
+div.top_left{
+  float:left;
+}
+div.top_right{
+  float:right;
+  display: inline-block;
+}
+
+
+#top_right_login_btn{
+  font-family: 'MabinogiClassicR';
+}
