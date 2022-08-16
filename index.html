@@ -6,34 +6,73 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
   <body>
-    <div id="wrap">
-      <div id="header" class="main_header">
-        <div id="util_menu">
-          <div class="top_left">
-            <ul class="util_menu_ul">
-              <li class="my_name_li">
-                <a href="https://kdy2541.github.io/disc202/" target="_blank">강동연's WEB</a>
-              </li>
-            </ul>
-          </div>
-          <div class="top_right">
-            <ul class="util_menu_ul">
-              <li>
-                ID:<input type="text" name="ID" size="15" id="top_right_ID_input">
-              </li>
-              <li>
-                PW:<input type="password" name="PASSWORD" size="15" id="top_right_pw_input">
-              </li>
-              <li>
-                <button id="top_right_login_btn">Login</button>
-              </li>
-            </ul>
+    <div id="main_all">
+      <div id="wrap">
+        <div id="header" class="main_header">
+          <div id="util_menu">
+            <div class="top_left">
+              <ul class="util_menu_ul">
+                <li class="my_name_li">
+                  <a href="https://kdy2541.github.io/disc202/" target="_blank">강동연's WEB</a>
+                </li>
+              </ul>
+            </div>
+            <div class="top_right" id="top_right_logout_state">
+              <ul class="util_menu_ul" id="login_ul">
+                <li>
+                  ID:<input type="text" name="ID" size="15" id="top_right_ID_input">
+                </li>
+                <li>
+                  PW:<input type="password" name="PASSWORD" size="15" id="top_right_pw_input">
+                </li>
+                <li>
+                  <button id="top_right_login_btn">Login</button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <div id="body" class="main_body">
+        <div id="body" class="main_body">
+          <div id="main_music_info" class="main_music">
+            <table id="main_table">
+              <tr class="new_music_tr">
+                <td class="new_music_td" id="new_music_1">
+                  <img src="img/drake.jpeg" width="100">
+                </td>
+                <td class="new_music_td" id="new_music_2">
+                  <img src="img/drake.jpeg" width="100">
+                </td>
+                <td class="new_music_td" id="new_music_3">
+                  <img src="img/drake.jpeg" width="100">
+                </td>
+                <td class="new_music_td" id="new_music_4">
+                  <img src="img/drake.jpeg" width="100">
+                </td>
+                <td rowspan="3" class="my_music_list" id="my_music_list_td">
+                  <img src="img/drake.jpeg" width="100">
+                </td>
+              </tr>
+              <tr class="new_music_tr">
+                <td class="new_music_td" id="new_music_5">
+                </td>
+                <td class="new_music_td" id="new_music_6">
+                </td>
+                <td class="new_music_td" id="new_music_7">
+                </td>
+                <td class="new_music_td" id="new_music_8">
+                </td>
+              </tr>
+              <tr class="music_ranking">
+                <td colspan="4" id="music_ranking_td">
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div id="footer" class="main_footer">
+        </div>
       </div>
-      <div id="footer" class="main_footer">
-      </div>
+      <script src="js/index.js"></script>
   </body>
 </html>

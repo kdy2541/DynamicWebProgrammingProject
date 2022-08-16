@@ -4,6 +4,13 @@
     font-weight: normal;
     font-style: normal;
 }
+body{
+  padding-left:150px;
+  padding-right: 150px;
+}
+#main_all{
+  padding:1000px 0px 1000px 0px;
+}
 div{
   display: inline;
   font-family: 'MabinogiClassicR';
@@ -29,6 +36,10 @@ div.top_right{
 }
 
 
+
 #top_right_login_btn{
+  font-family: 'MabinogiClassicR';
+}
+#top_right_logout_btn{
   font-family: 'MabinogiClassicR';
 }
