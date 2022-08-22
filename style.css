@@ -83,6 +83,7 @@ body{
 }
 
 .github-btn{
+  position: absolute;
   margin-left: 560px;
 }
 
@@ -390,4 +391,50 @@ body{
 .queue .name{
     font-size: 22px;
     text-transform: capitalize;
+}
+
+.inputs{
+  width:300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+
+}
+.inputs.active{
+  width:300px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -50px;
+  text-align: center;
+}
+
+.inputs > input{
+  background: transparent;
+  border: none;
+  border-bottom: solid 1px #ccc;
+  padding 20px 0px 5px 0px;
+  font-size:14pt;
+  color: white;
+  width:100%;
+}
+
+.login-small-btn{
+  width: 20px;
+  margin-left: 44%;
+  margin-top: 20px;
+  background-color: #141414;
+  color: white;
+  border : 0;
+  outline: 0;
+}
+.user-name-div{
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
 }

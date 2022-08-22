@@ -182,7 +182,9 @@ seekBar.addEventListener('change', () => {
 // repeat button
 
 repeatBtn.addEventListener('click', () => {
-    repeatBtn.classList.toggle('active');
+    //repeatBtn.classList.toggle('active');
+    setMusic(currentMusic);
+    music.play();
 })
 
 // volume section
@@ -214,4 +216,15 @@ const loginSectionNavBtn = document.querySelector('.login-section .nav-btn');
 
 loginSectionNavBtn.addEventListener('click', () => {
     loginSection.classList.toggle('active');
+})
+
+const loginSmallBtn = document.querySelector('.login-small-btn');
+
+loginSmallBtn.addEventListener('click', () => {
+  var IDText = document.getElementById("ID").value;
+  document.getElementById('input-div').innerHTML = IDText + "<br>Welcome";
+  document.getElementById('input-div').classList.add('active');
+  document.getElementById('user-name').innerHTML += "USER : " + IDText;
+
+  document.querySelector('#youtube-test').muted = "0";
 })
