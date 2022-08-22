@@ -3,7 +3,7 @@ let songs = [
         name: 'song 1',
         path: './musics/1.mp3',
         artist: 'artist 1',
-        cover: './/img/1.jpg'
+        cover: './img/1.jpg'
     },
     {
         name: 'song 2',
