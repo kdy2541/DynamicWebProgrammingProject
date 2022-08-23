@@ -146,7 +146,7 @@ body{
     bottom: 0;
     left: 0;
     background: var(--alpha-color);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(50px);/*webkit 접두사를 이용해주어야한다.*/
     transition: 1s;
 }
 
@@ -160,7 +160,7 @@ body{
     overflow: hidden;
 }
 
-.music-seek-bar::-webkit-slider-thumb{
+.music-seek-bar::-webkit-slider-thumb{/*webkit접두사를 이용하여 설정해주어야한다*/
     -webkit-appearance: none;
     height: 10px;
     width: 5px;
