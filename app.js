@@ -1,5 +1,5 @@
 
-
+//메인화면 사진 돌아가는 부분
 const carousel = document.querySelectorAll('.carousel img');
 
 let carouselImageIndex = 0;
@@ -16,16 +16,18 @@ const changeCarousel = () => {
     carousel[carouselImageIndex].classList.toggle('active');
 }
 
+//반복시간 설정
 setInterval(() => {
     changeCarousel();
 }, 3000);
 
+//뮤직플레이어 부분
 const musicPlayerSection = document.querySelector('.music-player-section');
 
 let clickCount = 1;
 
 musicPlayerSection.addEventListener('click', () => {
-    // checking for double click manually idk why default dbclick event was not working with this project If you know what could the problem Kindly tell me in the discussion below
+    //더블 클릭 체크
     if(clickCount >= 2){
         musicPlayerSection.classList.add('active');
         clickCount = 1;
@@ -37,7 +39,7 @@ musicPlayerSection.addEventListener('click', () => {
     }, 250);
 })
 
-/////// back from music player
+//홈화면 돌아가기
 
 const backToHomeBtn = document.querySelector('.music-player-section .back-btn');
 
@@ -45,7 +47,7 @@ backToHomeBtn.addEventListener('click', () => {
     musicPlayerSection.classList.remove('active');
 })
 
-//////// access playlist
+//재생목록 들어가기
 
 const playlistSection = document.querySelector('.playlist');
 const navBtn = document.querySelector('.music-player-section .nav-btn');
@@ -54,7 +56,7 @@ navBtn.addEventListener('click', () => {
     playlistSection.classList.add('active');
 })
 
-////////// back from playlist to music player
+//재생목록 -> 뮤직플레이어
 
 const backToMusicPlayer = document.querySelector('.playlist .back-btn');
 
@@ -65,18 +67,18 @@ backToMusicPlayer.addEventListener('click', () => {
 let currentMusic = 0;
 
 
-const music = document.querySelector('#audio-source');
+const music = document.querySelector('#audio-source');//오디오 태
 
 const seekBar = document.querySelector('.music-seek-bar');
-const songName = document.querySelector('.current-song-name');
-const artistName = document.querySelector('.artist-name');
-const coverImage = document.querySelector('.cover');
+const songName = document.querySelector('.current-song-name');//현재음악 이름
+const artistName = document.querySelector('.artist-name');//현재 아티스트
+const coverImage = document.querySelector('.cover');//앨범커버 이미지
 const currentMusicTime = document.querySelector('.current-time');
 const musicDuration = document.querySelector('.duration');
 
 const queue = [...document.querySelectorAll('.queue')];
 
-// select all buttons here
+//사용하는 버
 
 const forwardBtn = document.querySelector('i.fa-forward');
 const backwardBtn = document.querySelector('i.fa-backward');
@@ -97,11 +99,12 @@ const setMusic = (i) => {
     songName.innerHTML = song.name;
     artistName.innerHTML = song.artist;
     coverImage.src = song.cover;
+    //각종 요소 설정
 
     setTimeout(() => {
         seekBar.max = music.duration;
         musicDuration.innerHTML = formatTime(music.duration);
-    }, 300);
+    }, 300);//음악 최대 시간 설
     currentMusicTime.innerHTML = '00 : 00';
     queue.forEach(item => item.classList.remove('active'));
     queue[currentMusic].classList.add('active');
@@ -121,7 +124,9 @@ const formatTime = (time) => {
     }
 
     return `${min} : ${sec}`;
-}
+}//음악 진행 상황
+
+
 
 playBtn.addEventListener('click', () => {
     music.play();
@@ -130,7 +135,7 @@ playBtn.addEventListener('click', () => {
 })
 
 
-// pauseBtn click event
+// 음악 재생
 
 pauseBtn.addEventListener('click', () => {
     music.pause();
@@ -138,7 +143,7 @@ pauseBtn.addEventListener('click', () => {
     playBtn.classList.add('active');
 })
 
-
+//일시 정지
 
 forwardBtn.addEventListener('click', () => {
     if(currentMusic >= songs.length - 1){
@@ -150,7 +155,7 @@ forwardBtn.addEventListener('click', () => {
     playBtn.click();
 })
 
-// backward btn
+// 다음 음악
 
 backwardBtn.addEventListener('click', () => {
     if(currentMusic <= 0){
@@ -161,6 +166,8 @@ backwardBtn.addEventListener('click', () => {
     setMusic(currentMusic);
     playBtn.click();
 })
+
+//이전음악
 
 setInterval(() => {
     seekBar.value = music.currentTime;
@@ -179,7 +186,7 @@ seekBar.addEventListener('change', () => {
     music.currentTime = seekBar.value;
 })
 
-// repeat button
+// 음악 부분 재생 옮기기
 
 repeatBtn.addEventListener('click', () => {
     //repeatBtn.classList.toggle('active');
@@ -187,16 +194,20 @@ repeatBtn.addEventListener('click', () => {
     music.play();
 })
 
-// volume section
+// 다시듣기
 
 volumeBtn.addEventListener('click', () => {
     volumeBtn.classList.toggle('active');
     volumeSlider.classList.toggle('active');
 })
 
+//볼륨열기
+
 volumeSlider.addEventListener('input', () => {
     music.volume = volumeSlider.value;
 })
+
+//볼륨슬라이더
 
 queue.forEach((item, i) => {
     item.addEventListener('click', () => {
@@ -204,6 +215,7 @@ queue.forEach((item, i) => {
         playBtn.click();
     })
 })
+//각각의 큐의 아이템에 setmusic 적용
 
 const loginSectionBtn = document.querySelector('.login-section-btn');
 const loginSection = document.querySelector('.login-section');
@@ -225,6 +237,4 @@ loginSmallBtn.addEventListener('click', () => {
   document.getElementById('input-div').innerHTML = IDText + "<br>Welcome";
   document.getElementById('input-div').classList.add('active');
   document.getElementById('user-name').innerHTML += "USER : " + IDText;
-
-  document.querySelector('#youtube-test').muted = "0";
 })
